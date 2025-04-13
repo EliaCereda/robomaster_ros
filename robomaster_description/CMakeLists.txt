@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
 project(robomaster_description)
 
+# Enable new FindPython behaviour from CMake 3.15:
+# Select _first_ Python version on $PATH that satisfies minimum version constraint,
+# as opposed to the _newest_ version on $PATH.
+cmake_policy(SET CMP0094 NEW)
+
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 99)
